@@ -1,0 +1,434 @@
+\documentclass[10pt,oneside,reqno]{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\usepackage{xcolor}
+\definecolor{mygray}{gray}{0.7}
+\usepackage{lscape}
+
+\addtolength{\textwidth}{3cm}
+\addtolength{\textheight}{3cm}
+\addtolength{\hoffset}{-1.5cm}
+\addtolength{\voffset}{-1.5cm}
+
+\begin{document}
+	\section*{\textbf{Spectral Sequence of a Quintic with 14 Nodes}}
+	
+	\begin{flushleft}
+		Let $f=3x_0^2x_1^2(x_0+x_1)-x_2x_3(2x_0^3+2x_1^3-x_2^3-x_3^3)\in\mathbb{Z}[x_0,x_1,x_2,x_3]$, a homogeneous quintic, then $f$ has 14 ordinary double points and no other singularities.  Let $\zeta=e^{2\pi i/3}$, then the 14 singular points are
+		\begin{align*}
+			& [1:0:0:0],[1:0:0:\zeta^k\sqrt[3]{2}],[1:0:\zeta^k\sqrt[3]{2}:0], \\
+			& [0:1:0:0],[0:1:0:\zeta^k\sqrt[3]{2}],[0:1:\zeta^k\sqrt[3]{2}:0]
+		\end{align*}
+		for $k=0,1,2$.  The spectral sequence of $f$ is below.
+		
+		\vspace{3mm}
+		
+		\begin{center}
+			\begin{tikzpicture}
+				\draw[blue,thick] (3.17,1.43) --(3.17,3.19);
+				\draw[blue,thick] (2.28,1.43) --(2.28,3.19);
+				\draw[blue,thick] (3.17,3.19) arc (0:180:0.445cm);
+				\draw[blue,thick] (2.28,1.43) arc (180:360:0.445cm);
+				\draw[blue,thick] (0.73,1.43) --(0.73,3.19);
+				\draw[blue,thick] (-0.16,1.43) --(-0.16,3.19);
+				\draw[blue,thick] (0.73,3.19) arc (0:180:0.445cm);
+				\draw[blue,thick] (-0.16,1.43) arc (180:360:0.445cm);
+				
+				\draw[red,thick] (0.86,1.44) -- (0.86,4.79);
+				\draw[red,thick] (-0.29,1.44) -- (-0.29,4.79);
+				\draw[red,thick] (0.86,4.79) arc (0:180:0.575cm);
+				\draw[red,thick] (-0.29,1.44) arc (180:360:0.575cm);
+				\draw[red,thick] (-1.6,1.48) -- (-1.6,4.74);
+				\draw[red,thick] (-2.85,1.48) -- (-2.85,4.74);
+				\draw[red,thick] (-1.6,4.74) arc (0:180:0.625cm);
+				\draw[red,thick] (-2.85,1.48) arc (180:360:0.625cm);
+				
+				\draw[OliveGreen,thick] (-1.7,3) -- (-1.7,6.44);
+				\draw[OliveGreen,thick] (-2.75,3) -- (-2.75,6.44);
+				\draw[OliveGreen,thick] (-1.7,6.44) arc (0:180:0.525cm);
+				\draw[OliveGreen,thick] (-2.75,3) arc (180:360:0.525cm);
+				\draw[OliveGreen,thick] (-4.26,3) -- (-4.26,6.44);
+				\draw[OliveGreen,thick] (-5.3,3) -- (-5.3,6.44);
+				\draw[OliveGreen,thick] (-4.26,6.44) arc (0:180:0.52cm);
+				\draw[OliveGreen,thick] (-5.3,3) arc (180:360:0.52cm);
+				
+				\draw[blue,thick] (0.22,-2.89) -- (2.72,-2.89);
+				\draw[blue,thick] (0.22,-3.66) -- (2.72,-3.66);
+				\draw[blue,thick] (2.72,-3.66) arc (270:450:0.385cm);
+				\draw[blue,thick] (0.22,-2.89) arc (90:270:0.385cm);
+				
+				\draw[red,thick] (-2.39,-1.33) -- (0.36,-1.33);
+				\draw[red,thick] (-2.39,-2.1) -- (0.36,-2.1);
+				\draw[red,thick] (0.36,-2.1) arc (270:450:0.385cm);
+				\draw[red,thick] (-2.39,-1.33) arc (90:270:0.385cm);
+				
+				\draw[OliveGreen,thick] (-4.88,0.25) -- (-2.1,0.25);
+				\draw[OliveGreen,thick] (-4.88,-0.52) -- (-2.1,-0.52);
+				\draw[OliveGreen,thick] (-2.1,-0.52) arc (270:450:0.385cm);
+				\draw[OliveGreen,thick] (-4.88,0.25) arc (90:270:0.385cm);
+				
+				\draw[red,thick] (0.27,-4.83) circle (0.43cm);
+				\draw[blue,thick] (2.71,-6.4) circle (0.39cm);
+				
+				\draw[black,thin] (-5.4,0.55) -- (5.02,0.55);
+				\draw[black,thin] (-5.4,-4.06) -- (5.02,-4.06);
+				\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+				{
+					
+					P_{16}\Omega^4 & 0 & & & \\
+					P_{12}\Omega^3 & P_{11}\Omega^4 & 0 & & \\
+					P_8\Omega^2 & P_7\Omega^3 & P_6\Omega^4 & 0 & \\
+					& P_3\Omega^2 & P_2\Omega^3 & P_1\Omega^4 & 0 \\
+					\mathbb{C}^{14} & \mathbb{C}^{14} & & & \\
+					& \mathbb{C}^{10} & \mathbb{C}^{44} & & \\
+					& & 0 & \mathbb{C}^4 & \\
+					& & \mathbb{C}^{34} & & \\
+					& & & \mathbb{C}^4 & \\};
+				\path[-stealth]
+				%Indices are that of a matrix (m-i-j) ith row jth column starting from the upper left hand corner
+				%Vertical Arrows
+				(m-2-1) edge (m-1-1)
+				(m-3-1) edge (m-2-1)
+				(m-2-2) edge (m-1-2)
+				(m-3-2) edge (m-2-2)
+				(m-4-2) edge (m-3-2)
+				(m-3-3) edge (m-2-3)
+				(m-4-3) edge (m-3-3)
+				(m-4-4) edge (m-3-4)
+				
+				%Horizontal Arrows
+				(m-2-1) edge [mygray] (m-2-2)
+				(m-2-2.east|-m-2-3) edge [mygray] (m-2-3)
+				(m-3-1) edge [mygray] (m-3-2)
+				(m-3-2) edge [mygray] (m-3-3)
+				(m-3-3.east|-m-3-4) edge [mygray] (m-3-4)
+				(m-4-2) edge [mygray] (m-4-3)
+				(m-4-3) edge [mygray] (m-4-4)
+				(m-4-4.east|-m-4-5) edge [mygray] (m-4-5)
+				(m-5-1) edge (m-5-2)
+				(m-6-2) edge (m-6-3)
+				(m-7-3.east|-m-7-4) edge (m-7-4);
+				%(m-2-1.east|-m-2-2) edge node [below] {$\mathcal{B}_T$}
+				%node [above] {$\exists$} (m-2-2)
+			\end{tikzpicture}
+		\end{center}
+	
+		The zeta function of $f$ is
+		\begin{equation*}
+			Z(f,T)=\frac{1}{(1-T)(1-pT)(1-p^2T)P(T)}
+		\end{equation*}
+		where $P(T)$ is the ``interesting" part of the zeta function and $\deg(P(T))=34+4=38$.  Of course this agrees with the theory which says that
+		\begin{equation*}
+			\deg(P(T))=\frac{1}{5}((5-1)^4+5-1)-14=52-14=38
+		\end{equation*}
+		note that 52 is from the smooth case.  I was able to calculate $P(T)$ for $p=5$ which gives us an example of the algorithm working when the prime divides the degree of $f$.
+		
+		\newpage
+		
+		\begin{center}
+			\renewcommand{\arraystretch}{1.3}
+			\begin{tabular}{ |c|c| }
+				\hline
+				$p$ &  $P(T)$ \\
+				\hline
+				\multirow{3}{0.5em}{5} & $(1-5T)^9(1+5T)^5(1+25T^2)^2(1-6T+25T^2)$ \\
+				& $(1+15T^2-100T^3+375T^4+5^6T^6)(1+15T^2+100T^3+375T^4+5^6T^6)$ \\
+				& $(1+6T+45T^2+200T^3+1125T^4+3750T^5+5^6T^6)$ \\
+				\hline
+				\multirow{2}{0.5em}{7} & $(1-7T)^{10}(1+7T)^6(1-10T+49T^2)(1-7T+49T^2)^4$ \\
+				& $(1+4T+42T^2+196T^3+7^4T^4)(1+9T+91T^2+441T^3+7^4T^4)^2$ \\
+				\hline
+				\multirow{4}{0.9em}{11} & $(1-11T)^{10}(1+11T)^4(1+121T^2)^2(1-3T+121T^2)$ \\
+				& $(1-T-44T^2+726T^3-5324 T^4-11^4T^5+11^6T^6)$ \\
+				& $(1+T-44T^2-726T^3-5324T^4+11^4T^5+11^6T^6)$ \\
+				& $(1+11T+187T^2+2178T^3+22627T^4+11^5T^5+11^6 T^6)$ \\
+				\hline
+			\end{tabular}
+		\end{center}
+		
+		\vspace{5mm}
+		
+		\textbf{Remarks:} On the factorization of $P(T)$.
+		\newline From the theory of zeta functions we know that
+		\begin{equation*}
+			P(T)=\prod_{k=1}^{38}(1-\alpha_k T)
+		\end{equation*}
+		where $|\alpha_k|=p^{(3-1)/2}=p$, for all $k=1,2,\dots,38$.  Our computations show us what $P(T)$ over $\mathbb{Q}$ is, and curiosity drives us to find $P(T)$ over $\mathbb{C}$, i.e., 38 linear factors.  For $p=5$, it is obvious that
+		\begin{align*}
+			1+25T^2 & =(1+5iT)(1-5iT) \\
+			1-6T+25T^2 & =(1-(3+4i)T)(1-(3-4i)T)
+		\end{align*}
+		so we are left with the three sextics above.  Let $g_1(T)=1+15T^2-100T^3+375T^4+5^6T^6$, then finding $\alpha_k$ such that $g_1(T)=\prod(1-\alpha_k T)$ is equivalent to finding the roots of the polynomial $T^6g_1(1/T)$ since
+		\begin{equation*}
+			T^6g_1\Bigg(\frac{1}{T}\Bigg)=T^6\prod_{k=1}^{6}\Bigg(1-\frac{\alpha_k}{T}\Bigg)=\prod_{k=1}^{6}(T-\alpha_k).
+		\end{equation*}
+		Now
+		\begin{align*}
+			T^6g_1\Bigg(\frac{1}{T}\Bigg) & =T^6\Bigg(1+\frac{15}{T^2}-\frac{100}{T^3}+\frac{375}{T^4}+\frac{5^6}{T^6}\Bigg) \\
+			& =T^6+15T^4-100T^3+375T^2+5^6
+		\end{align*}
+		the reciprocal polynomial of $g_1$, call it $G_1$.  Since the absolute value of each $\alpha_k$ is 5, if $G_1$ had a real root then it would either be 5 or $-5$.  However $G_1(5)=37500$ and $G_1(-5)=62500$, hence all roots of $G_1$ are complex.  In addition, the coefficients of $G_1$ are all real numbers so the complex roots come in conjugate pairs.  Lastly, since $|\overline{\alpha_k}|=|\alpha_k|=5$ we are led to the following factorization of $G_1$
+		\begin{align*}
+			G_1(T) & =(T^2+aT+25)(T^2+bT+25)(T^2+cT+25) \\
+			& =T^6+(a+b+c)T^5+(ab+ac+bc+75)T^4+(50(a+b+c)+abc)T^3 \\
+			& \;\;\;\;+25(ab+ac+bc+75)T^2+625(a+b+c)T+5^6.
+		\end{align*}
+		Equating the coefficients yields the following system of equations
+		\begin{align*}
+			a+b+c & =0 \\
+			ab+ac+bc & =-60 \\
+			abc & =-100
+		\end{align*}
+		which can be solved by elimination and or substitution.  However, since the left hand side of the equations above are the elementary symmetric polynomials in three variables we can construct a cubic polynomial whose roots are $a$, $b$, and $c$.  Recall that
+		\begin{equation*}
+			(x-a)(x-b)(x-c)=x^3-(a+b+c)x^2+(ab+ac+bc)x-abc
+		\end{equation*}
+		so for our case we are interested in the roots of $x^3-60x+100$.  One can use the intervals $[-9,-8]$, $[1,2]$, and $[6,7]$ together with the Intermediate Value Theorem to show that this cubic has three real roots.  And since $x^3-60x+100\in\mathbb{Q}[x]$ is irreducible, expressing the real roots in terms of radicals requires complex numbers by Casus Irreducibilis.  One can do this by using Cardano's formula for the depressed cubic $x^3+px+q$
+		\begin{equation*}
+			x=\sqrt[3]{-\frac{q}{2}+\sqrt{\frac{q^2}{4}+\frac{p^3}{27}}}+\sqrt[3]{-\frac{q}{2}-\sqrt{\frac{q^2}{4}+\frac{p^3}{27}}}.
+		\end{equation*}
+		Our particular cubic is depressed and $p=-60,q=100$
+		\begin{equation*}
+			\Rightarrow \sqrt[3]{-50+10i\sqrt{55}}+\sqrt[3]{-50-10i\sqrt{55}}\approx 6.71649
+		\end{equation*}
+		is a root of $x^3-60x+100$.  Let $\zeta=e^{2\pi i/3}$, then the other two roots are
+		\begin{align*}
+			\zeta\sqrt[3]{-50+10i\sqrt{55}}+\zeta^2\sqrt[3]{-50-10i\sqrt{55}} & \approx -8.47357\\
+			\zeta^2\sqrt[3]{-50+10i\sqrt{55}}+\zeta\sqrt[3]{-50-10i\sqrt{55}} & \approx 1.75708.
+		\end{align*}
+		With these numbers we can now factor $G_1(T)$ over the reals
+		\begin{align*}
+			G_1(T) & =T^6+15T^4-100T^3+375T^2+5^6 \\
+			& =(T^2+\Big(\sqrt[3]{-50+10i\sqrt{55}}+\sqrt[3]{-50-10i\sqrt{55}}\Big)T+25) \\
+			& \;\;\;\;\times(T^2+\Big(\zeta\sqrt[3]{-50+10i\sqrt{55}}+\zeta^2\sqrt[3]{-50-10i\sqrt{55}}\Big)T+25) \\
+			& \;\;\;\;\times(T^2+\Big(\zeta^2\sqrt[3]{-50+10i\sqrt{55}}+\zeta\sqrt[3]{-50-10i\sqrt{55}}\Big)T+25).
+		\end{align*}
+		Each of these quadratics can be factored using the quadratic formula and therefore our original sextic $1+15T^2-100T^3+375T^4+5^6T^6$ can be written as $\prod(1-\alpha_kT)$ where $\alpha_k$ runs through the following 6 numbers
+		\begin{gather*}
+			-\frac{\sqrt[3]{10}}{2}\Bigg(\sqrt[3]{-5+i\sqrt{55}}+\sqrt[3]{-5-i\sqrt{55}}\Bigg)+\frac{\sqrt[3]{10}}{2}\sqrt{\Bigg(\sqrt[3]{-5+i\sqrt{55}}+\sqrt[3]{-5-i\sqrt{55}}\Bigg)^2-10\sqrt[3]{10}} \\
+			-\frac{\sqrt[3]{10}}{2}\Bigg(\sqrt[3]{-5+i\sqrt{55}}+\sqrt[3]{-5-i\sqrt{55}}\Bigg)-\frac{\sqrt[3]{10}}{2}\sqrt{\Bigg(\sqrt[3]{-5+i\sqrt{55}}+\sqrt[3]{-5-i\sqrt{55}}\Bigg)^2-10\sqrt[3]{10}} \\
+			-\frac{\sqrt[3]{10}}{2}\Bigg(\zeta\sqrt[3]{-5+i\sqrt{55}}+\zeta^2\sqrt[3]{-5-i\sqrt{55}}\Bigg)+\frac{\sqrt[3]{10}}{2}\sqrt{\Bigg(\zeta\sqrt[3]{-5+i\sqrt{55}}+\zeta^2\sqrt[3]{-5-i\sqrt{55}}\Bigg)^2-10\sqrt[3]{10}} \\
+			-\frac{\sqrt[3]{10}}{2}\Bigg(\zeta\sqrt[3]{-5+i\sqrt{55}}+\zeta^2\sqrt[3]{-5-i\sqrt{55}}\Bigg)-\frac{\sqrt[3]{10}}{2}\sqrt{\Bigg(\zeta\sqrt[3]{-5+i\sqrt{55}}+\zeta^2\sqrt[3]{-5-i\sqrt{55}}\Bigg)^2-10\sqrt[3]{10}} \\
+			-\frac{\sqrt[3]{10}}{2}\Bigg(\zeta^2\sqrt[3]{-5+i\sqrt{55}}+\zeta\sqrt[3]{-5-i\sqrt{55}}\Bigg)+\frac{\sqrt[3]{10}}{2}\sqrt{\Bigg(\zeta^2\sqrt[3]{-5+i\sqrt{55}}+\zeta\sqrt[3]{-5-i\sqrt{55}}\Bigg)^2-10\sqrt[3]{10}} \\
+			-\frac{\sqrt[3]{10}}{2}\Bigg(\zeta^2\sqrt[3]{-5+i\sqrt{55}}+\zeta\sqrt[3]{-5-i\sqrt{55}}\Bigg)-\frac{\sqrt[3]{10}}{2}\sqrt{\Bigg(\zeta^2\sqrt[3]{-5+i\sqrt{55}}+\zeta\sqrt[3]{-5-i\sqrt{55}}\Bigg)^2-10\sqrt[3]{10}}.
+		\end{gather*}
+		As a reminder, the absolute value of each of the six numbers above is 5 (the theory is so beautiful).  For the next sextic, $1+15T^2+100T^3+375T^4+5^6T^6$, we have the same story as above but now with the cubic $x^3-60x-100$.  Again the $\alpha_k$'s are solvable in terms of radicals so we are left with the last sextic $1+6T+45T^2+200T^3+1125T^4+3750T^5+5^6T^6$.  Factoring its reciprocal polynomial
+		\begin{gather*}
+			T^6+6T^5+45T^4+200T^3+1125T^2+3750T+5^6=(T^2+aT+25)(T^2+bT+25)(T^2+cT+25)
+		\end{gather*}
+		gives us the following system of equations
+		\begin{align*}
+			a+b+c & =6 \\
+			ab+ac+bc & =-30 \\
+			abc & =-100.
+		\end{align*}
+		Solving for $a$, $b$, and $c$ is equivalent to finding the roots of $x^3-6x^2-30x+100$.  Notice that this cubic is not depressed so we make the change of variables $x\rightarrow y-2$ to yield the cubic $y^3-42y+24$ whose roots can be calculated using Cardano's formula.  Hence
+		\begin{align*}
+			& T^6+6T^5+45T^4+200T^3+1125T^2+3750T+5^6 \\
+			& =(T^2+\Bigg(2+\sqrt[3]{-12+10i\sqrt{26}}+\sqrt[3]{-12-10i\sqrt{26}}\Bigg)T+25) \\
+			& \;\;\;\;\times(T^2+\Bigg(2+\zeta\sqrt[3]{-12+10i\sqrt{26}}+\zeta^2\sqrt[3]{-12-10i\sqrt{26}}\Bigg)T+25) \\
+			& \;\;\;\;\times(T^2+\Bigg(2+\zeta^2\sqrt[3]{-12+10i\sqrt{26}}+\zeta\sqrt[3]{-12-10i\sqrt{26}}\Bigg)T+25)
+		\end{align*}
+		where $\zeta=e^{2\pi i/3}$.  The roots of the three quadratics above provide us with the the six $\alpha_k$ such that
+		\begin{equation*}
+			1+6T+45T^2+200T^3+1125T^4+3750T^5+5^6T^6=\prod_{k=1}^{6}(1-\alpha_kT).
+		\end{equation*}
+		
+		\vspace{3mm}
+		
+		For $p=7$ we have
+		\begin{align*}
+			1-10T+49T^2 & = (1-(5+2i\sqrt{6})T)(1-(5-2i\sqrt{6})T) \\
+			1-7T+49T^2 & =\Bigg(1-\frac{7(1+i\sqrt{3})}{2}T\Bigg)\Bigg(1-\frac{7(1-i\sqrt{3})}{2}T\Bigg)
+		\end{align*}
+		and for the quartics they factor as $\prod(1-\alpha_kT)$ where $\alpha_k$ runs through the 4 numbers below each quartic.
+		\begin{align*}
+			1+4T+42T^2&+196T^3+7^4T^4 & 1+9T+91T&^2+441T^3+7^4T^4 \\
+			-1+\sqrt{15}\pm i&\sqrt{33+2\sqrt{15}} & \frac{1}{4}\Bigg(-9+\sqrt{109}&\pm 3i\sqrt{66+2\sqrt{109}}\Bigg) \\
+			-1-\sqrt{15}\pm i&\sqrt{33-2\sqrt{15}} & \frac{1}{4}\Bigg(-9-\sqrt{109}&\pm 3i\sqrt{66-2\sqrt{109}}\Bigg)
+		\end{align*}
+		
+		\vspace{3mm}
+		
+		For $p=11$ we have
+		\begin{align*}
+			1+121T^2 & = (1-11iT)(1+11iT) \\
+			1-3T+121T^2 & =\Bigg(1-\frac{3+5i\sqrt{19}}{2}T\Bigg)\Bigg(1-\frac{3-5i\sqrt{19})}{2}T\Bigg)
+		\end{align*}
+		and for the three sextics they are all solvable by radicals.  Factoring them into the form $\prod(1-\alpha_kT)$ requires the same steps that we went through for the prime 5.  As an example, one of the roots of
+		\begin{equation*}
+			T^6-T^5-44T^4+726T^3-5324T^2-11^4T+11^6
+		\end{equation*}
+		is
+		\begin{align*}
+			& \frac{1}{6\sqrt[3]{2}}\Bigg(\sqrt[3]{2}-\sqrt[3]{22471+33i\sqrt{6238959}}-\sqrt[3]{22471-33i\sqrt{6238959}} \\
+			& \;\;\;\;+\sqrt{\Bigg(\sqrt[3]{2}-\sqrt[3]{22471+33i\sqrt{6238959}}-\sqrt[3]{22471-33i\sqrt{6238959}}\Bigg)^2-4356\sqrt[3]{4}}\Bigg).
+		\end{align*}
+		
+		\newpage
+		
+		Here are the bases that I used for the cohomology spaces on the $E_1$ page.  For $H^4(K_f^{\bullet})_1$ the trivial basis
+		\begin{equation*}
+			\{x_0,x_1,x_2,x_3\}dx_0\wedge dx_1\wedge dx_2\wedge dx_3.
+		\end{equation*}
+		For $H^4(K_f^{\bullet})_6$ the following 44 monomials were used.
+		
+		\vspace{3mm}
+			
+		\begin{center}
+			\begin{tabular}{ |c|c|c|c|c|c|c|c| }
+				\hline
+				\rule{0pt}{2.5ex}$x_0^6$ & $x_0^5x_1$ & $x_0^5x_2$ & $x_0^5x_3$ & $x_0^4x_1^2$ & $x_0^4x_1x_2$ & $x_0^4x_1x_3$ & $x_0^4x_2^2$ \\
+				\hline
+				\rule{0pt}{2.5ex}$x_0^4x_3^2$ & $x_0^3x_1^3$ & $x_0^3x_1^2x_2$ & $x_0^3x_1^2x_3$ & $x_0^3x_1x_2^2$ & $x_0^3x_1x_3^2$ & $x_0^3x_2^3$ & $x_0^3x_3^3$ \\
+				\hline
+				\rule{0pt}{2.5ex}$x_0^2x_1^4$ & $x_0^2x_1^3x_2$ & $x_0^2x_1^3x_3$ & $x_0^2x_1^2x_2^2$ & $x_0^2x_1^2x_3^2$ & $x_0^2x_1x_2^3$ & $x_0^2x_1x_2^2x_3$ & $x_0^2x_1x_2x_3^2$ \\
+				\hline
+				\rule{0pt}{2.5ex}$x_0^2x_1x_3^3$ & $x_0^2x_2^4$ & $x_0^2x_2^3x_3$ & $x_0x_1^2x_2^3$ & $x_0x_1^2x_3^3$ & $x_0x_1x_2^4$ & $x_0x_1x_2^3x_3$ & $x_0x_1x_2^2x_3^2$ \\
+				\hline
+				\rule{0pt}{2.5ex}$x_0x_2^5$ & $x_0x_2^3x_3^2$ & $x_1^6$ & $x_1^5x_2$ & $x_1^5x_3$ & $x_1^4x_2^2$ & $x_1^4x_3^2$ & $x_1^3x_2^3$ \\
+				\hline
+				\rule{0pt}{2.5ex}$x_1^3x_3^3$ & $x_1x_2^5$ & $x_1x_2^3x_3^2$ & $x_2^6$ & \multicolumn{4}{r}{} \\ \cline{1-4}
+			\end{tabular}
+		\end{center}
+	
+		\vspace{3mm}
+	
+		As a reminder each monomial is being multiplied by the 4-form $dx_0\wedge dx_1\wedge dx_2\wedge dx_3$.  Lastly for $H^3(K_f^{\bullet})_7$ let
+		\begin{align*}
+			\omega_1 & =8x_3(2x_0^4+3x_0^3x_1-3x_0x_1^3-2x_1^4)dx_0\wedge dx_1\wedge dx_2 \\
+			& \;\;\;\;+2x_2(2x_0^4+3x_0^3x_1-3x_0x_1^3-2x_1^4)dx_0\wedge dx_1\wedge dx_3 \\
+			& \;\;\;\;+x_1(3x_0+2x_1)(2x_0^3+2x_1^3-5x_3^3)dx_0\wedge dx_2\wedge dx_3 \\
+			& \;\;\;\;+x_0(2x_0+3x_1)(2x_0^3+2x_1^3-5x_3^3)dx_1\wedge dx_2\wedge dx_3 \\
+			\omega_2 & =-2x_3(2x_0^4+3x_0^3x_1-3x_0x_1^3-2x_1^4)dx_0\wedge dx_1\wedge dx_2 \\
+			& \;\;\;\;-8x_2(2x_0^4+3x_0^3x_1-3x_0x_1^3-2x_1^4)dx_0\wedge dx_1\wedge dx_3 \\
+			& \;\;\;\;+x_1(3x_0+2x_1)(2x_0^3+2x_1^3-5x_2^3)dx_0\wedge dx_2\wedge dx_3 \\
+			& \;\;\;\;+x_0(2x_0+3x_1)(2x_0^3+2x_1^3-5x_2^3)dx_1\wedge dx_2\wedge dx_3
+		\end{align*}
+		then $\omega_1,\omega_2\in\ker(P_5\Omega^3\xrightarrow{df\wedge}P_9\Omega^4)/\text{im}(P_1\Omega^2\xrightarrow{df\wedge}P_5\Omega^3)$ and
+		\begin{equation*}
+			\{x_0^2\omega_1,x_0x_2\omega_1,x_0x_3\omega_1,x_1^2\omega_1,x_1x_2\omega_1,x_1x_3\omega_1,x_2^2\omega_1,x_3^2\omega_1,x_0^2\omega_2,x_1^2\omega_2\}
+		\end{equation*}
+		is a basis for $H^3(K_f^{\bullet})_7$.  However this basis leaves something to be desired since the de Rham differential of each element is not always a combination of our 44 monomials.  For example
+		\begin{equation*}
+			d(x_1^2\omega_1)=(-10x_0^4x_1^2-10x_0^3x_1^3-10x_0x_1^5+25x_0x_1^2x_3^3-10x_1^6+25x_1^3x_3^3)dx_0\wedge dx_1\wedge dx_2\wedge dx_3
+		\end{equation*}
+		and the monomial $x_0x_1^5$ is not on our list of 44 monomials.  This is not a problem because we can write $x_0x_1^5$ as a combination of the 44 monomials plus $df\wedge$ some 3-form and then use this to calculate a basis for the cohomology group on the $E_2$ page of corresponding degree, $E_2^{4,6}$.  Or we can add an element in the image of Koszul to $x_1^2\omega_1$ and see if $d$ of the resulting 3-form has only the monomials on our list of 44, basis for $H_4(K_f^{\bullet})_6$.  It turns out that such a basis exists $\{b_i\}_{i=1}^{10}$ where
+		
+		\newpage
+		
+		\begin{align*}
+			b_1 & =\frac{1}{5}(x_0^2+x_1^2)\omega_1-\frac{1}{3}x_3df\wedge(x_0^2dx_0\wedge dx_2+x_1^2dx_1\wedge dx_2) \\
+			b_2 & =-\frac{1}{5}x_1^2\omega_1+\frac{1}{3}x_3df\wedge(x_0^2dx_0\wedge dx_2+x_1^2dx_1\wedge dx_2) \\
+			b_3 & =\frac{4}{5}x_2(x_0-x_1)\omega_1+df\wedge\Bigg(x_0x_2(3x_0+4x_1)dx_0\wedge dx_1-\frac{2}{3}x_3^3dx_0\wedge dx_2\Bigg) \\
+			b_4 & =\frac{1}{20}x_0x_3\omega_1+df\wedge\Bigg(\frac{3}{4}x_0^2x_3+\frac{1}{2}x_0x_1x_3\Bigg)dx_0\wedge dx_1 \\
+			b_5 & =\frac{2}{5}x_1x_2\omega_1-df\wedge\Bigg(x_0x_1x_2dx_0\wedge dx_1-\frac{1}{3}x_3^3dx_0\wedge dx_2+\frac{1}{3}x_1x_2x_3dx_1\wedge dx_2\Bigg) \\
+			b_6 & =\Bigg(\frac{1}{2}x_1x_3+\frac{12}{5}x_2^2\Bigg)\omega_1+df\wedge\Bigg(\Bigg(5x_0x_1x_3+\frac{3}{2}x_0x_2^2+\frac{15}{2}x_1^2x_3-\frac{3}{2}x_1x_2^2\Bigg)dx_0\wedge dx_1 \\
+			& \;\;\;\;-5x_2^2x_3dx_0\wedge dx_2+\Bigg(\frac{5}{3}x_1x_3^2-5x_2^2x_3\Bigg)dx_1\wedge dx_2\Bigg) \\
+			b_7 & =\Bigg(\frac{2}{5}x_0x_2-\frac{2}{5}x_1x_2-\frac{1}{20}x_3^2\Bigg)\omega_1+df\wedge\Bigg(\Bigg(2x_0x_2(x_0+x_1)+\frac{1}{8}x_3^2(x_0-x_1)\Bigg)dx_0\wedge dx_1 \\
+			& \;\;\;\;-\frac{1}{3}x_3^3dx_0\wedge dx_2-\frac{1}{9}x_3^3dx_1\wedge dx_2\Bigg) \\
+			b_8 & =-\frac{1}{10}x_1x_3\omega_1-df\wedge\Bigg(x_1x_3\Bigg(x_0+\frac{3}{2}x_1\Bigg)dx_0\wedge dx_1-x_2^2x_3dx_0\wedge dx_2+\frac{1}{3}x_1x_3^2dx_1\wedge dx_2\Bigg) \\
+			b_9 & =\frac{1}{25}x_0^2(\omega_1-\omega_2) \\
+			b_{10} & =\frac{1}{25}x_1^2(\omega_2-\omega_1).
+		\end{align*}
+		Let $\omega=dx_0\wedge dx_1\wedge dx_2\wedge dx_3$, then below are the de Rham differentials of each $b_i$
+		\begin{align*}
+			d(b_1) & =(2x_0^6-5x_0^4x_1^2-5x_0^3x_3^3+5x_0^2x_1^4-5x_0^2x_1x_3^3+5x_0x_1^2x_3^3-2x_1^6+5x_1^3x_3^3)\omega \\
+			d(b_2) & =(2x_0^5x_1+5x_0^4x_1^2+2x_0^3x_1^3-3x_0^2x_1^4-5x_0x_1^2x_3^3+2x_1^6-5x_1^3x_3^3)\omega \\
+			d(b_3) & =(2x_0^5x_2-12x_0^3x_1x_3^2-6x_0^2x_1^3x_2-18x_0^2x_1^2x_3^2+3x_0^2x_2^4+4x_0x_1x_2^4+8x_1^5x_2)\omega \\
+			d(b_4) & =(2x_0^5x_3+2x_0^4x_1x_3-3x_0^2x_2^3x_3-2x_0x_1x_2^3x_3)\omega \\
+			d(b_5) & =(2x_0^4x_1x_2+6x_0^3x_1x_3^2+3x_0^2x_1^3x_2+9x_0^2x_1^2x_3^2-2x_0^2x_1x_2^2x_3-x_0x_1x_2^4-4x_1^5x_2)\omega \\
+			d(b_6) & =(18x_0^4x_2^2-30x_0^2x_1^3x_3+20x_0^2x_1x_2x_3^2-30x_0^2x_2^3x_3-20x_0x_1x_2^3x_3+3x_0x_2^5+20x_1^5x_3-18x_1^4x_2^2-3x_1x_2^5)\omega \\
+			d(b_7) & =(2x_0^4x_3^2-4x_0^3x_1x_3^2-4x_0^2x_1^3x_2-6x_0^2x_1^2x_3^2+2x_0^2x_2^4+2x_0x_1x_2^4-x_0x_2^3x_3^2+4x_1^5x_2-2x_1^4x_3^2+x_1x_2^3x_3^2)\omega \\
+			d(b_8) & =(6x_0^3x_1x_2^2+6x_0^2x_1^3x_3+9x_0^2x_1^2x_2^2-4x_0^2x_1x_2x_3^2+4x_0x_1x_2^3x_3-4x_1^5x_3)\omega \\
+			d(b_9) & =(x_0^3x_2^3-x_0^3x_3^3+x_0^2x_1x_2^3-x_0^2x_1x_3^3)\omega \\
+			d(b_{10}) & =(x_0x_1^2x_2^3-x_0x_1^2x_3^3+x_1^3x_2^3-x_1^3x_3^3)\omega.
+		\end{align*}
+		As mentioned above the advantage of this basis $\{b_1,b_2,\dots,b_{10}\}$ is that the de Rham differential of each of these elements is a linear combination of the 44 monomials for our basis of $H^4(K_f^{\bullet})_6$.  This in turn makes the matrix representation of $d:H^3(K_f^{\bullet})_7\rightarrow H^4(K_f^{\bullet})_6$ easy to construct since we only have to read off the coefficients of each $d(b_i)$ which are also all integers.
+	\end{flushleft}
+
+\begin{landscape}
+	\[ \setcounter{MaxMatrixCols}{44}
+	\left[\begin{matrix}
+		2 & 0 & 0 & 0 & -5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -5 & 5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -5 & 0 & 0 & 0 & 5 & 0 & 0 & 0 & 0 & 0 & \cdots \\
+		0 & 2 & 0 & 0 & 5 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & -3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -5 & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -12 & 0 & 0 & 0 & -6 & 0 & 0 & -18 & 0 & 0 & 0 & 0 & 3 & 0 & 0 & 0 & 4 & 0 & 0 & 0 & 0 & \cdots \\
+		0 & 0 & 0 & 2 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -3 & 0 & 0 & 0 & -2 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 6 & 0 & 0 & 0 & 3 & 0 & 0 & 9 & 0 & -2 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 0 & \cdots \\
+		0 & 0 & 0 & 0 & 0 & 0 & 0 & 18 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -30 & 0 & 0 & 0 & 0 & 20 & 0 & 0 & -30 & 0 & 0 & 0 & -20 & 0 & 3 & 0 \\
+		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & -4 & 0 & 0 & 0 & -4 & 0 & 0 & -6 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & -1 & \cdots \\
+		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 6 & 0 & 0 & 0 & 0 & 0 & 6 & 9 & 0 & 0 & 0 & -4 & 0 & 0 & 0 & 0 & 0 & 0 & 4 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & -1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & -1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \cdots \\
+		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 &	0 & 0 & 0 & 0 & 1 & -1 & 0 & 0 & 0 & 0 & 0
+	\end{matrix}\right. \]
+
+	\vspace{4mm}
+
+	\[\hspace{157mm}\left.\begin{matrix}
+		\cdots & -2 & 0 & 0 & 0 & 0 & 0 & 5 & 0 & 0 & 0 \\
+		& 2 & 0 & 0 & 0 & 0 & 0 & -5 & 0 & 0 & 0 \\
+		\cdots & 0 & 8 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		& 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		\cdots & 0 & -4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		& 0 & 0 & 20 & -18 & 0 & 0 & 0 & -3 & 0 & 0 \\
+		\cdots & 0 & 4 & 0 & 0 & -2 & 0 & 0 & 0 & 1 & 0 \\
+		& 0 & 0 & -4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		\cdots & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		& 0 & 0 & 0 & 0 & 0 & 1 & -1 & 0 & 0 & 0		
+	\end{matrix}\right] \]
+\end{landscape}
+
+	The $10\times44$ matrix above, call it $M$, is the representation of the de Rham differential $d:H^3(K_f^{\bullet})_7\rightarrow H^4(K_f^{\bullet})_6$.  It has rank 10 so the space $E_2^{4,6}$ has dimension $44-10=34$.  One way to find these 34 basis elements is to augment $M$ with rows of the identity matrix of size 44, $I_{44}$.  Starting with the first row of $I_{44}$, $e_1=(1\;\;0\;\;0\dots0)$, we have the $11\times44$ matrix
+	\begin{equation*}
+		\begin{bmatrix}
+			M \\
+			e_1
+		\end{bmatrix}
+	\end{equation*}
+	which has rank 11 and therefore we use the first element in the basis $H^4(K_f^{\bullet})_6$.  Next we try the second row of $I_{44}$, $e_2=(0\;\;1\;\;0\dots0)$.  The matrix
+	\begin{equation*}
+		\begin{bmatrix}
+			M \\
+			e_1 \\
+			e_2
+		\end{bmatrix}
+	\end{equation*}
+	has rank 12 so our basis for $E_2^{4,6}$ will contain the elements
+	\begin{equation*}
+		\{x_0^6,x_0^5x_1\}dx_0\wedge dx_1\wedge dx_2\wedge dx_3.
+	\end{equation*}
+	Continuing in this fashion we find that if we add rows 1 through 21, 23, 24, 26 through 29, 32 through 35, 38, 39, and 44 of $I_{44}$ to $M$, then the resulting $44\times44$ matrix will have rank 44.  Therefore if we omit entries 22, 25, 30, 31, 36, 37, 40, 41, 42, and 43 of our list of 44 monomials (for $H^4(K_f^{\bullet})_6$) then we will have a basis for $E_2^{4,6}$.
+	
+	\vspace{3mm}
+	
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c|c|c|c| }
+			\hline
+			\rule{0pt}{2.5ex}$x_0^6$ & $x_0^5x_1$ & $x_0^5x_2$ & $x_0^5x_3$ & $x_0^4x_1^2$ & $x_0^4x_1x_2$ & $x_0^4x_1x_3$ & $x_0^4x_2^2$ \\
+			\hline
+			\rule{0pt}{2.5ex}$x_0^4x_3^2$ & $x_0^3x_1^3$ & $x_0^3x_1^2x_2$ & $x_0^3x_1^2x_3$ & $x_0^3x_1x_2^2$ & $x_0^3x_1x_3^2$ & $x_0^3x_2^3$ & $x_0^3x_3^3$ \\
+			\hline
+			\rule{0pt}{2.5ex}$x_0^2x_1^4$ & $x_0^2x_1^3x_2$ & $x_0^2x_1^3x_3$ & $x_0^2x_1^2x_2^2$ & $x_0^2x_1^2x_3^2$ & $x_0^2x_1x_2^2x_3$ & $x_0^2x_1x_2x_3^2$ & $x_0^2x_2^4$ \\
+			\hline
+			\rule{0pt}{2.5ex}$x_0^2x_2^3x_3$ & $x_0x_1^2x_2^3$ & $x_0x_1^2x_3^3$ & $x_0x_1x_2^2x_3^2$ & $x_0x_2^5$ & $x_0x_2^3x_3^2$ & $x_1^6$ & $x_1^4x_2^2$ \\
+			\hline
+			\rule{0pt}{2.5ex}$x_1^4x_3^2$ & $x_2^6$ & \multicolumn{6}{r}{} \\ \cline{1-2}
+		\end{tabular}
+	\end{center}
+	
+	\vspace{3mm}
+	
+%	These are the 34 basis elements that I used for the space $E_2^{4,6}$.
+
+	
+	
+	
+\end{document}
